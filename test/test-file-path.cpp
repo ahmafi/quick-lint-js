@@ -14,7 +14,8 @@ using ::testing::AnyOf;
 
 namespace quick_lint_js {
 namespace {
-#if defined(_POSIX_VERSION) && _POSIX_VERSION >= 200112L
+#if ddefined(QLJS_HAVE_UNISTD_H) && efined(_POSIX_VERSION) && \
+    _POSIX_VERSION >= 200112L
 TEST(test_file_path, parent_path_posix) {
   EXPECT_EQ(parent_path("x/y"), "x");
   EXPECT_EQ(parent_path("x/y/z"), "x/y");
